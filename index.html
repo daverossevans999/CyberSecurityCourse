@@ -1,15 +1,8 @@
-<input type="file" id="fileInput" accept=".txt">
-<pre id="fileContent"></pre>
-
-<script>
-  document.getElementById('fileInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      document.getElementById('fileContent').textContent = e.target.result;
-    };
-    reader.readAsText(file);
-  });
-</script>
+<h>fetch('secret.txt')
+  .then(response => response.text())
+  .then(data => {
+    console.log(data); // Displays in console
+    document.body.innerText = data; // Or displays on screen
+  })
+  .catch(error => console.error('Error:', error));
+</h>
